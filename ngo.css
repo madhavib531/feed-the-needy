@@ -1,0 +1,257 @@
+:root {
+  --bg: #f4faf5;
+  --card: #ffffff;
+  --line: #d9e6dd;
+  --text: #1a2f21;
+  --muted: #617364;
+  --green: #1f7a4c;
+  --green-soft: #e7f5ec;
+  --orange: #b7791f;
+  --orange-soft: #fff6df;
+  --blue: #2563eb;
+  --blue-soft: #eaf1ff;
+  --red: #b42318;
+  --red-soft: #fdecec;
+  --shadow: 0 12px 28px rgba(16, 43, 24, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #eef9f1 0%, var(--bg) 55%, #e9f2ec 100%);
+}
+
+.ngo-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 28px 16px 44px;
+}
+
+.ngo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.ngo-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.ngo-header p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ngo-status {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.ngo-status.active {
+  color: var(--green);
+  background: var(--green-soft);
+}
+
+.ngo-status.inactive {
+  color: var(--red);
+  background: var(--red-soft);
+}
+
+.btn-toggle {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  padding: 8px 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-logout {
+  border: 1px solid #f3b4b4;
+  border-radius: 10px;
+  background: #fff5f5;
+  color: var(--red);
+  padding: 8px 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-toggle:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-logout:hover {
+  background: #ffecec;
+}
+
+.section-head {
+  margin-top: 18px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.feedback {
+  display: none;
+  margin-top: 14px;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+}
+
+.feedback.success {
+  display: block;
+  background: var(--green-soft);
+  color: var(--green);
+  border: 1px solid #cde8d7;
+}
+
+.feedback.error {
+  display: block;
+  background: var(--red-soft);
+  color: var(--red);
+  border: 1px solid #f4c9c5;
+}
+
+.state-box {
+  display: none;
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  padding: 14px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  color: var(--muted);
+}
+
+.state-box.show {
+  display: block;
+}
+
+.state-box.error {
+  color: var(--red);
+}
+
+.empty-icon {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.request-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 14px;
+}
+
+.request-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  margin-bottom: 15px;
+  border: 1px solid var(--line);
+}
+
+.request-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.request-title {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.badge.available {
+  color: var(--orange);
+  background: var(--orange-soft);
+}
+
+.badge.assigned {
+  color: var(--blue);
+  background: var(--blue-soft);
+}
+
+.request-meta {
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.btn-accept,
+.btn-decline {
+  border: 0;
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-accept {
+  background: var(--green);
+  color: #fff;
+}
+
+.btn-decline {
+  background: #d95a5a;
+  color: #fff;
+}
+
+.btn-accept:disabled,
+.btn-decline:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 740px) {
+  .ngo-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

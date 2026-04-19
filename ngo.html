@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NGO Dashboard</title>
+  <link rel="stylesheet" href="./ngo.css" />
+</head>
+
+<body>
+  <main class="ngo-shell">
+
+    <!-- HEADER -->
+    <header class="ngo-header">
+      <div>
+        <h1>NGO Dashboard</h1>
+        <p>Delivery management for institution-accepted food requests</p>
+      </div>
+
+      <div class="header-actions">
+        <span id="ngoStatusBadge" class="ngo-status active">Active</span>
+        <button id="toggleStatusBtn" class="btn-toggle">Set Inactive</button>
+        <button id="logoutBtn" class="btn-logout">Logout</button>
+      </div>
+    </header>
+
+    <!-- SECTION -->
+    <section class="section-head">
+      <h2>Available Delivery Requests</h2>
+    </section>
+
+    <!-- STATES -->
+    <section id="feedbackBox" class="feedback"></section>
+    <section id="loadingState" class="state-box show">Loading requests...</section>
+    <section id="errorState" class="state-box error">Failed to load requests</section>
+    <section id="emptyState" class="state-box empty">
+      <p>No delivery requests available right now</p>
+    </section>
+
+    <!-- REQUEST LIST -->
+    <section id="requestList" class="request-grid"></section>
+
+  </main>
+
+  <script src="./ngo.js"></script>
+</body>
+</html>

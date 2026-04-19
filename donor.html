@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donor Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="sidebarBackdrop" class="backdrop"></div>
+
+    <aside id="sidebar" class="sidebar" aria-hidden="true">
+      <div class="sidebar-header">
+        <h2>Menu</h2>
+      </div>
+      <button id="historyNavBtn" class="sidebar-link" type="button">Donation History</button>
+      <button id="logoutBtn" class="sidebar-link danger" type="button">Logout</button>
+    </aside>
+
+    <div class="page">
+      <header class="navbar">
+        <button id="menuBtn" class="menu-btn" aria-label="Open menu" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <p class="app-name">Feed the Needy</p>
+      </header>
+
+      <main class="main-content">
+        <section class="welcome-card">
+          <h1 class="welcome-heading">
+            <span class="welcome-text">Welcome, </span>
+            <span id="donorName" class="donor-name">Donor</span>
+          </h1>
+          <p>Make a difference by sharing your surplus food</p>
+        </section>
+
+        <section class="donate-section">
+          <button id="showFormBtn" class="donate-btn" type="button">Donate Food</button>
+
+          <div id="successMessage" class="success-message" role="status" aria-live="polite">
+            <span class="success-icon">✓</span>
+            <span>Thank you for your donation!</span>
+          </div>
+
+          <div id="errorMessage" class="error-message" role="alert"></div>
+
+          <form id="donationForm" class="donation-form" novalidate>
+            <div class="field-group">
+              <label for="foodType">Food Type</label>
+              <input id="foodType" name="foodType" type="text" placeholder="Cooked meals / groceries" required />
+            </div>
+
+            <div class="field-group">
+              <label for="meals">Number of Meals</label>
+              <input id="meals" name="meals" type="number" min="1" required />
+            </div>
+
+            <div class="field-group">
+              <label for="location">Location</label>
+              <input id="location" name="location" type="text" placeholder="Pickup location" required />
+            </div>
+
+            <div class="field-group">
+              <label for="pickupBy">Pickup Time</label>
+              <input id="pickupBy" name="pickupBy" type="datetime-local" required />
+            </div>
+
+            <button id="submitBtn" class="submit-btn" type="submit">
+              <span id="submitSpinner" class="spinner"></span>
+              <span id="submitText">Submit Donation</span>
+            </button>
+          </form>
+        </section>
+
+        <section id="historySection" class="history-section">
+          <div class="history-header">
+            <h2>Donation History</h2>
+            <div class="history-actions">
+              <button id="refreshHistoryBtn" class="refresh-btn" type="button">Refresh</button>
+              <button id="closeHistoryBtn" class="close-history-btn" type="button">Close</button>
+            </div>
+          </div>
+          <div id="historyList" class="history-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./donor.js"></script>
+  </body>
+</html>
