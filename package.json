@@ -2,9 +2,13 @@
   "name": "@figma/my-make-file",
   "private": true,
   "version": "0.0.1",
+  "packageManager": "npm@10.9.2",
+  "engines": {
+    "node": ">=18"
+  },
   "type": "module",
   "scripts": {
-    "build": "vite build",
+    "build": "node ./node_modules/vite/bin/vite.js build",
     "dev": "vite"
   },
   "dependencies": {
